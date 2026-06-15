@@ -21,9 +21,9 @@ export default function AdminProfile() {
     if (session?.user) {
       setFormData((prev) => ({
         ...prev,
-        name: session.user.name || "",
-        email: session.user.email || "",
-        phone: (session.user as any).phone || "",
+name: session?.user?.name || "",
+email: session?.user?.email || "",
+phone: (session?.user as any)?.phone || "",
       }));
     }
   }, [session]);
