@@ -4,8 +4,9 @@ import { useSettings } from "@/components/SettingsContext";
 import { ShieldCheck, Lock, Eye, FileText, ChevronRight } from "lucide-react";
 
 export default function PrivacyContent() {
-  const { storeName } = useSettings();
-  const name = storeName || "NEXTECOMMERCE";
+  const { settings } = useSettings() as any;
+const storeName = settings?.storeName;
+  const name = storeName || "AuroraMart";
 
   const sections = [
     { id: "collection", title: "Information Collection" },
