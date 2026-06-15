@@ -34,7 +34,7 @@ export default function LoginPage() {
         // 2. Success! Now fetch the session to check the role
           const session = await getSession();
 
-          if (session?.user?.role === "ADMIN") {
+          if ((session?.user as any)?.role === "ADMIN") {
             router.push("/admin/dashboard");
           } else {
             // REDIRECT USER TO THEIR DASHBOARD
