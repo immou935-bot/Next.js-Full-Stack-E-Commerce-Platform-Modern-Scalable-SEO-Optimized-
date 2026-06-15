@@ -16,8 +16,9 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function ContactClient() {
-  const { storeName } = useSettings();
-  const name = storeName || "NEXTECOMMERCE";
+ const { settings } = useSettings() as any;
+const storeName = settings?.storeName;
+  const name = storeName || "AuroraMart";
 
   return (
     <div className="pb-32">
