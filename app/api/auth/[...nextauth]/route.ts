@@ -50,7 +50,7 @@ export const authOptions: AuthOptions = {
       // 1. On initial login, move DB data into the JWT token
       if (user) {
         token.id = user.id;
-        token.role = user.role;
+        token.role = (user as any).role;
         token.phone = (user as any).phone;
         token.name = user.name;
       }
