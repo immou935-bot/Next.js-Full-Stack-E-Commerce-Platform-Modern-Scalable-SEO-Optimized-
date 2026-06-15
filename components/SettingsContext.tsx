@@ -5,6 +5,7 @@ import { createContext, useContext, useState, ReactNode } from "react";
 interface SettingsContextType {
   currency: string;
   currencySymbol: string;
+  storeName: string;
   setCurrencyData: (code: string, symbol: string) => void;
 }
 
@@ -14,6 +15,7 @@ const SettingsContext = createContext<SettingsContextType | undefined>(undefined
 export function SettingsProvider({ children }: { children: ReactNode }) {
   const [currency, setCurrency] = useState("USD");
   const [currencySymbol, setCurrencySymbol] = useState("$");
+  const [storeName] = useState("NEXTECOMMERCE");
 
   const setCurrencyData = (code: string, symbol: string) => {
     setCurrency(code);
@@ -21,7 +23,14 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <SettingsContext.Provider value={{ currency, currencySymbol, setCurrencyData }}>
+    <SettingsContext.Provider
+  value={{
+    currency,
+    currencySymbol,
+    storeName,
+    setCurrencyData,
+  }}
+>
       {children}
     </SettingsContext.Provider>
   );
