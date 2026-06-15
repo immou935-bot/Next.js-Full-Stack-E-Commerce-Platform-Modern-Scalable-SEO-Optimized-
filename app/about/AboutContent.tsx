@@ -5,8 +5,9 @@ import { Award, Globe, Zap, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
-  const { storeName } = useSettings();
-  const name = storeName || "NEXTECOMMERCE";
+ const { settings } = useSettings() as any;
+const storeName = settings?.storeName;
+  const name = storeName || "AuroraMart";
 
   return (
     <div className="pb-32">
