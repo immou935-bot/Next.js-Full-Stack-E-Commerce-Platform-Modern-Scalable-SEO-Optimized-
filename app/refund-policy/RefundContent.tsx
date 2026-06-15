@@ -5,8 +5,9 @@ import { RotateCcw, DollarSign, ShieldCheck, Truck, ArrowRight } from "lucide-re
 import Link from "next/link";
 
 export default function RefundContent() {
-  const { storeName } = useSettings();
-  const name = storeName || "NEXTECOMMERCE";
+  const { settings } = useSettings() as any;
+const storeName = settings?.storeName;
+  const name = storeName || "AuroraMart";
 
   return (
     <div className="pb-32">
