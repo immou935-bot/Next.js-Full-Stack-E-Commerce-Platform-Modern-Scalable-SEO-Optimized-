@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
+import { prisma } from "@/lib/prisma";
 
 export async function GET() {
   const email = "im.mou935@gmail.com";
@@ -13,6 +13,7 @@ export async function GET() {
 
   return NextResponse.json({
     success: true,
-    user,
+    email,
+    role: user.role,
   });
 }
