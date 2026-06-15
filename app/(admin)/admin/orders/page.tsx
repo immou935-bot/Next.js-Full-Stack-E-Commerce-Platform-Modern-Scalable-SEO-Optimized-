@@ -7,8 +7,8 @@ import {
 } from "lucide-react";
 
 export default function AdminOrdersPage() {
-  const [orders, setOrders] = useState([]);
-  const [filteredOrders, setFilteredOrders] = useState([]);
+const [orders, setOrders] = useState<any[]>([]);
+const [filteredOrders, setFilteredOrders] = useState<any[]>([]);
   const [search, setSearch] = useState("");
   const [activeFilter, setActiveFilter] = useState("ALL");
   const [loading, setLoading] = useState(true);
